@@ -60,65 +60,40 @@ const myImages = [
 
 ];
 
-const mySigns = []
+let mySigns = []
+let myText = ''
 function Translate() {
-
+  
   const {user, setUser} = useUser()
   const [text, setText] = useState('');
-  // setSigns(signImages)
-  
+  const [sign, setSign] = useState([]);
 
   const handleTranslateClick = async textToTranslate => {
-    setText(textToTranslate)
-    // console.log("textToTranslate  " + typeof textToTranslate)
-    
+    myText = textToTranslate
+    setText(myText)
     const [error, updateUser] =  await addTranslate(user, textToTranslate)
     if(error !== null){
       return
     }
-
     storageSave(STORAGE_KEY_USER, updateUser)
     setUser(updateUser)
+  }
+
+  useEffect(() => {
+    setText(myText)
     let i = 0;
-    while(i <= textToTranslate.length){
-      for (const value of myImages.values()) {
-        //console.log(value.name)
-        if(value.name === textToTranslate[i]){
-          console.log("val is " + value.name + " and char is " + textToTranslate[i])
-          console.log(value)
-          mySigns.push(value)
-          //setSigns(...signs, value)
-        }
+    mySigns = []
+    while(i <= myText.length){
+      for (const value of myImages.keys()) {
+          if(myImages[value].name === myText[i]){
+            mySigns.push(myImages[value])
+          }
+        
       }
 
       i++;
     }
-    
-    
-  }
-
-//   useEffect((text) => {
-//     if(text === null){
-//       console.log("nulkll")
-//     }
-    
-//     console.log("from use effect " + typeof text)
-//     // let i = 0;
-//     // while(i < text.length){
-//     //   for (const value of myImages.values()) {
-//     //     //console.log(value.name)
-//     //     if(value.name === text[i]){
-//     //       console.log("val is " + value.name + " and char is " + text[i])
-//     //       console.log(value)
-//     //       mySigns.push(value)
-//     //       //setSigns(...signs, value)
-//     //     }
-//     //   }
-
-//     //   i++;
-//     // }
-// }, [text])
-  
+  }, [text])
 
   return (
     <>

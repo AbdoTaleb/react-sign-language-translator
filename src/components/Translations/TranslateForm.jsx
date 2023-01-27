@@ -3,13 +3,16 @@ import { useForm } from 'react-hook-form'
 
 
 
+
 function TranslateForm({onTranslate}) {
     const {register, handleSubmit} = useForm();
 
 
     const onSubmit = ({textToTranslate}) => {
         onTranslate(textToTranslate); 
+        
     }
+  
 
 
   return (

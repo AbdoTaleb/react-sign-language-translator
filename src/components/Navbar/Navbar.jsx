@@ -9,10 +9,14 @@ function Navbar() {
     <>
       <nav>
         <ul>
-            <li>Translate Sign Language</li>
+            
         </ul>
         { user !== null &&
             <ul>
+              
+                <li>
+                    <p>Translate Sign Language</p>
+                </li>
                 <li>
                     <NavLink to="/translate">Translations</NavLink>
                 </li>

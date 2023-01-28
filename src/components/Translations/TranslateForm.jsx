@@ -12,12 +12,16 @@ function TranslateForm({onTranslate}) {
         onTranslate(textToTranslate); 
         
     }
+
+
   
 
 
   return (
     <>
     
+    
+
     <form onSubmit={handleSubmit(onSubmit)}>
         <fieldset>
             

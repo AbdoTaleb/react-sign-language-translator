@@ -26,7 +26,7 @@ import { storageSave } from '../utils/storage';
 //     name: "d",
 //     image: "img/d.png"
 //   },
-  
+
 
 // ]
 
@@ -60,19 +60,27 @@ const myImages = [
 
 ];
 
+
 let mySigns = []
 let myText = ''
 function Translate() {
-  
-  const {user, setUser} = useUser()
+
+  const { user, setUser } = useUser()
   const [text, setText] = useState('');
   const [sign, setSign] = useState([]);
+
+  const [checked, setChecked] = useState(false);
+
+  const handleChange = () => {
+    console.log(checked)
+    setChecked(!checked);
+  };
 
   const handleTranslateClick = async textToTranslate => {
     myText = textToTranslate
     setText(myText)
-    const [error, updateUser] =  await addTranslate(user, textToTranslate)
-    if(error !== null){
+    const [error, updateUser] = await addTranslate(user, textToTranslate)
+    if (error !== null) {
       return
     }
     storageSave(STORAGE_KEY_USER, updateUser)
@@ -83,12 +91,12 @@ function Translate() {
     setText(myText)
     let i = 0;
     mySigns = []
-    while(i <= myText.length){
+    while (i <= myText.length) {
       for (const value of myImages.keys()) {
-          if(myImages[value].name === myText[i]){
-            mySigns.push(myImages[value])
-          }
-        
+        if (myImages[value].name === myText[i]) {
+          mySigns.push(myImages[value])
+        }
+
       }
 
       i++;
@@ -97,15 +105,15 @@ function Translate() {
 
   return (
     <>
-        <h1>Translate</h1>
-        
-        <section id="text-to-translate">
-          <TranslateForm onTranslate={handleTranslateClick}></TranslateForm>
-
-        </section>
-        <ImageGallery images={mySigns} />
-        
       
+
+
+      <section id="text-to-translate">
+        <TranslateForm onTranslate={handleTranslateClick}></TranslateForm>
+      </section>
+      <ImageGallery images={mySigns} />
+
+
     </>
   )
 }

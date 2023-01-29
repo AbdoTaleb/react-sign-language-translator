@@ -6,14 +6,11 @@ import {
 import Login from './views/Login';
 import Translate from './views/Translate';
 import Profile from './views/Profile';
-import Navbar from './components/Navbar/Navbar';
-
 
 function App() {
   return (
     <BrowserRouter>
       <div className="App">
-        <Navbar></Navbar>
         <Routes>
           <Route path="/" element={ <Login/>} />
           <Route path="/translate" element={ <Translate/>} />

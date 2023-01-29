@@ -15,7 +15,6 @@ const usernameConfig = {
     minLength: 3
 }
 
-
 function LoginForm() {
     const { register, handleSubmit, formState: { errors } } = useForm();
     const { user, setUser } = useUser();
@@ -135,22 +134,6 @@ function LoginForm() {
                     </div>
                 </div>
             </section>
-
-            {/* <h1 color='blue'>What's your name?</h1>
-
-            <form onSubmit={handleSubmit(onSubmit)}>
-                <fieldset>
-                    <label htmlFor='username'>Username</label>
-                    <input type='text'
-                        placeholder='Abdo Taleb'
-                        {...register('username', usernameConfig)}></input>
-                    {errorMessage}
-                </fieldset>
-                <Button variant="primary" type='submit' disabled={loading}>Continue</Button>
-                {loading && <p>Logging in...</p>}
-                {apiError && <p>{apiError}</p>}
-            </form> */}
-
         </>
     )
 }

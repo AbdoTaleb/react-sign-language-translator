@@ -8,7 +8,7 @@ import withAuth from '../hoc/withAuth'
 import { storageSave } from '../utils/storage';
 import "bootstrap/dist/css/bootstrap.min.css"
 
-
+// Data, all images in both capital and small letter
 const myImages = [
   { name: "a", url: 'img/a.png', description: 'a letter' },
   { name: "b", url: 'img/b.png', description: 'b letter' },
@@ -71,13 +71,6 @@ let myText = ''
 function Translate() {
   const { user, setUser } = useUser()
   const [text, setText] = useState('');
-  const [checked, setChecked] = useState(false);
-
-  const handleChange = () => {
-    console.log(checked)
-    setChecked(!checked);
-  };
-
   const handleTranslateClick = async textToTranslate => {
     myText = textToTranslate
     setText(myText)
@@ -88,7 +81,9 @@ function Translate() {
     storageSave(STORAGE_KEY_USER, updateUser)
     setUser(updateUser)
   }
-
+  // user useEffect to update when the any chanhe accur on the TEXT, 
+  // Rerender the component and empty the array of the signs, och if the 
+  // user enter a new text, will be add to the array "mySigns".
   useEffect(() => {
     setText(myText)
     let i = 0;
@@ -98,39 +93,24 @@ function Translate() {
         if (myImages[value].name === myText[i]) {
           mySigns.push(myImages[value])
         }
-
       }
-
       i++;
     }
   }, [text])
 
   return (
     <>
-
-
-
-
-
       <section id="text-to-translate">
         <TranslateForm onTranslate={handleTranslateClick}></TranslateForm>
       </section>
-
-
       <div class="card text-center">
         <div class="card-header">
-        Translations will appear here.
+          Translations will appear here.
         </div>
         <div class="card-body">
-        <ImageGallery images={mySigns} />
-          
+          <ImageGallery images={mySigns} />
         </div>
-        
       </div>
-      
-
-
-
     </>
   )
 }

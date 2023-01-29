@@ -9,26 +9,6 @@ import { storageSave } from '../utils/storage';
 
 
 
-// let signImages = [
-//   {
-//     name: "a",
-//     image: "img/a.png"
-//   },
-//   {
-//     name: "b",
-//     image: "img/b.png"
-//   },
-//   {
-//     name: "c",
-//     image: "img/c.png"
-//   },
-//   {
-//     name: "d",
-//     image: "img/d.png"
-//   },
-
-
-// ]
 
 const myImages = [
   { name: "a", url: 'img/a.png', description: 'Image 1' },

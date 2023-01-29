@@ -5,10 +5,10 @@ import { storageSave } from '../../utils/storage';
 import { useNavigate } from 'react-router-dom';
 import { useUser } from '../../context/UserContext';
 import { STORAGE_KEY_USER } from '../../const/storageKey'
-import Button from 'react-bootstrap/Button'
+
 import "bootstrap/dist/css/bootstrap.min.css"
-import { container, row, col } from 'react-bootstrap/Container';
-import { FaBeer, FaFacebook, FaGithub, FaLinkedin } from 'react-icons/fa';
+
+import { FaGithub, FaLinkedin } from 'react-icons/fa';
 
 const usernameConfig = {
     required: true,
@@ -81,7 +81,7 @@ function LoginForm() {
                 >
 
                     <div className="card-body py-5 px-md-5" style={{
-                        background: 'rgb(255,153,204)'
+                        background: 'linear-gradient(to left, #3a6186 , #89253e)'
                     }}>
                         
                         <div className="row d-flex justify-content-center">

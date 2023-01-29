@@ -7,6 +7,7 @@ function ProfileTranslateHistory({ translations }) {
   
     return (
     <>
+
       <h2>Your translations history</h2>
       <div class="card mx-auto" style={{ width: "50%" }}>
         <ul class="list-group list-group-flush">
@@ -17,6 +18,7 @@ function ProfileTranslateHistory({ translations }) {
       </div>
       <div>
       </div>
+
     </>
   )
 }

@@ -9,7 +9,6 @@ import { storageSave } from '../utils/storage';
 import "bootstrap/dist/css/bootstrap.min.css"
 
 
-
 const myImages = [
   { name: "a", url: 'img/a.png', description: 'a letter' },
   { name: "b", url: 'img/b.png', description: 'b letter' },
@@ -111,9 +110,12 @@ function Translate() {
 
 
 
+
+
       <section id="text-to-translate">
         <TranslateForm onTranslate={handleTranslateClick}></TranslateForm>
       </section>
+
 
       <div class="card text-center">
         <div class="card-header">
@@ -126,6 +128,7 @@ function Translate() {
         
       </div>
       
+
 
 
     </>

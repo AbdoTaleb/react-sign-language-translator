@@ -27,7 +27,7 @@ const Profile = () => {
   return (
     <>
       <ProfileActions></ProfileActions>
-      
+
     </>
   )
 }

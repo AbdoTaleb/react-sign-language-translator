@@ -4,8 +4,12 @@ import { translateClearHistory } from '../../api/translate';
 import { STORAGE_KEY_USER } from '../../const/storageKey';
 import { useUser } from '../../context/UserContext';
 import { storageDelete, storageSave } from '../../utils/storage';
+
 import ProfileHeader from './ProfileHeader';
 import ProfileTranslateHistory from './ProfileTranslateHistory';
+
+
+
 
 
 function ProfileActions() {
@@ -40,12 +44,19 @@ function ProfileActions() {
 
     }
   return (
+
+    <>
+
     <section className="text-center">
       
         <div className="p-5 bg-image mb-300px"
           style={{
             backgroundImage: `url("https://makeitfable.com/wp-content/uploads/2022/02/2022-02-17-Sign-Language-1200x654.png")`,
+
             height: '350px',
+
+            height: '500px',
+
           }}
         ></div>
 
@@ -56,6 +67,7 @@ function ProfileActions() {
             backdropFilter: 'blur(30px)'
           }}
         >
+
           { user !== null &&
             <div>
               
@@ -65,11 +77,16 @@ function ProfileActions() {
               <button onClick={handleLogoutClick} type="button" className="btn btn-danger btn-lg m-2 btn-block">Logout</button>
             </div>
             }
+
+
+
           <div className="card-body py-5 px-md-5" style={{
             background: 'linear-gradient(to left, #3a6186 , #89253e)'
           }}>
             <ProfileHeader username={user.username}></ProfileHeader>
+
             
+
 
             
             <ProfileTranslateHistory translations={user.translations}></ProfileTranslateHistory>
@@ -80,6 +97,13 @@ function ProfileActions() {
           </div>
         </div>
       </section>
+
+          
+
+      
+    </>
+    
+
   )
 }
 

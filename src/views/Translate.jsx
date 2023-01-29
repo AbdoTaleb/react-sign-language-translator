@@ -9,7 +9,6 @@ import { storageSave } from '../utils/storage';
 
 
 
-
 const myImages = [
   { name: "a", url: 'img/a.png', description: 'Image 1' },
   { name: "b", url: 'img/b.png', description: 'Image 2' },
@@ -86,11 +85,29 @@ function Translate() {
   return (
     <>
       
-
+      {/* <div class="container">
+            <form onSubmit={handleSubmit(onSubmit)}>
+              <div class="row justify-content-md-center">
+                <div class="col-md-3 form-line">
+                  
+                  <textarea class="form-control" id="original" placeholder="Enter Your Text" {...register('textToTranslate')}></textarea>
+                </div>
+                <div class="col-md-9 form-line">
+                  
+                  <textarea class="form-control" id="translated" placeholder="Translated signs will be here"><ImageGallery images={mySigns} /></textarea>
+                </div>
+              </div>
+              <button type='submit'>Translate</button>
+            </form>
+            </div> */}
 
       <section id="text-to-translate">
         <TranslateForm onTranslate={handleTranslateClick}></TranslateForm>
       </section>
+      <div class="col-md-9 form-line">
+                  
+                  <textarea class="form-control" id="translated" placeholder="Translated signs will be here"><ImageGallery images={mySigns.ImageGallery} /></textarea>
+                </div>
       <ImageGallery images={mySigns} />
 
 

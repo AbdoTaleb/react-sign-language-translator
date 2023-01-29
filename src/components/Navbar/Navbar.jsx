@@ -7,7 +7,7 @@ function Navbar() {
     const {user} = useUser();
   return (
     <>
-      <nav>
+      {/* <nav>
         <ul>
             
         </ul>
@@ -25,7 +25,7 @@ function Navbar() {
                 </li>
             </ul>
         }
-      </nav>
+      </nav> */}
     </>
   )
 }

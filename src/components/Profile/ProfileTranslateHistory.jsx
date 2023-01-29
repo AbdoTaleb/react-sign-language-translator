@@ -4,24 +4,19 @@ import ProfileTranslationsHistoryItem from './ProfileTranslationsHistoryItem'
 function ProfileTranslateHistory({ translations }) {
   const translationsList = translations.map((translation, index) =>
     <ProfileTranslationsHistoryItem key={index + '-' + translation} translation={translation} />)
-  return (
+  
+    return (
     <>
-
-      <div>
-        <h2>Your translations history</h2>
-        <ul className="flex-column d-flex justify-content-center">
-          {translationsList.map(function(name, index){
-                    return <p style={{
-                      width: '500px'
-                    }}><li className="d justify-content-center" key={ index }>{name}</li></p>;
-                  })}
-          
+      <h2>Your translations history</h2>
+      <div class="card mx-auto" style={{ width: "50%" }}>
+        <ul class="list-group list-group-flush">
+          {translationsList.map(function (name, index) {
+            return <li className="list-group-item" key={index}>{name}</li>;
+          })}
         </ul>
       </div>
-
-     
-      
-      
+      <div>
+      </div>
     </>
   )
 }

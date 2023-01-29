@@ -121,11 +121,12 @@ function LoginForm() {
                                             border: '2px black'
                                         }}>Follow me on:</h5>
 
-                                        <a href="https://github.com/AbdoTaleb/react-sign-language-translator">
-                                            <FaGithub />
+                                        
+                                        <a className="btn text-white m-2" style={{backgroundColor: "#0082ca"}} href="https://github.com/AbdoTaleb/react-sign-language-translator" role="button">
+                                        <i><FaGithub /></i>
                                         </a>
-                                        <a href="https://www.linkedin.com/in/abdo-taleb/">
-                                            <FaLinkedin />
+                                        <a className="btn text-white m-2" style={{backgroundColor: "#0082ca"}} href="https://www.linkedin.com/in/abdo-taleb/" role="button">
+                                        <i><FaLinkedin /></i>
                                         </a>
                                     </div>
                                 </form>
